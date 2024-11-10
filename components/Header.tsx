@@ -4,7 +4,7 @@ import { Irish_Grover } from 'next/font/google';
 import { connectToArConnect, disconnectFromArConnect } from '@/utils/arconnect';
 import { initializeAO, resetAOConnection } from '../utils/ao';
 import { useState } from "react";
-import { createTracing } from "trace_events";
+
 
 const irishGrover = Irish_Grover({
     subsets: ['latin'],
@@ -14,11 +14,11 @@ const irishGrover = Irish_Grover({
 export default function Home() {
 
     const [walletAddress, setWalletAddress] = useState<string | null>(null);
-    const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<string | null>(null);
-    const [gameEnded, setGameEnded] = useState<boolean>(false);
-    const [showInstructions, setShowInstructions] = useState<boolean>(false);
-
+    const [loading, setLoading] = useState<boolean>(false);     // @typescript-eslint/no-unused-vars
+    const [error, setError] = useState<string | null>(null);    // @typescript-eslint/no-unused-vars
+    //const [gameEnded, setGameEnded] = useState<boolean>(false);
+    //const [showInstructions, setShowInstructions] = useState<boolean>(false);
+    console.log(loading, error);
     // Format wallet address for display
     const formatAddress = (addr: string) => {
         if (!addr) return '';
@@ -52,12 +52,10 @@ export default function Home() {
             resetAOConnection();
             setWalletAddress(null);
             setError(null);
-
         } catch (err) {
             console.error('Failed to Disconnect: ', err);
             setError('Failed to Disconnect. Please Try again.');
         }
-
     }
 
     return (
@@ -75,6 +73,10 @@ export default function Home() {
                 className="bg-slate-900 hover:bg-slate-700 rounded-lg text-white px-6 py-3 text-lg font-semibold transition duration-300 ease-in-out flex items-center"
             > {walletAddress ? `Connected: ${formatAddress(walletAddress)}` : "Connect Wallet"}
             </button>
+            <button onClick={handleDisconnect}>
+                Disconnect
+            </button>
+
         </nav>
     );
 }

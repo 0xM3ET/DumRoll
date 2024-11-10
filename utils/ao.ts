@@ -149,7 +149,7 @@ export async function fetchAllScores(): Promise<{ player: string; score: number;
             const messageData = JSON.parse(resultOutput.Messages[0].Data);
 
             if (messageData.status === 'success' && Array.isArray(messageData.data)) {
-                return messageData.data.map((item) => ({
+                return messageData.data.map((item: any) => ({
                     player: item.wallet || 'Unknown',
                     score: item.score || 0,
                     timestamp: Math.floor(item.timestamp / 1000) // Convert to seconds

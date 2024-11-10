@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image';
 import { Card } from "@/components/ui/card"
 
 
@@ -107,15 +108,15 @@ export default function GameBoard() {
 
 
     // Get piece image source
-    const getPieceImageSrc = (pieceType: CellState['piece']): string => {
-        switch (pieceType) {
-            case 'redPiece': return '/redDum.png';
-            case 'greenPiece': return '/greendum.png';
-            case 'yellowPiece': return '/yellowDum.png';
-            case 'bluePiece': return '/blueDum.png';
-            default: return ''; // for 'none'
-        }
-    };
+    // const getPieceImageSrc = (pieceType: CellState['piece']): string => {
+    //     switch (pieceType) {
+    //         case 'redPiece': return '/redDum.png';
+    //         case 'greenPiece': return '/greendum.png';
+    //         case 'yellowPiece': return '/yellowDum.png';
+    //         case 'bluePiece': return '/blueDum.png';
+    //         default: return ''; // for 'none'
+    //     }
+    // };
 
     // // Update piece positions (can be called after each round)
     // const updatePiecePosition = (index: number, newRow: number, newCol: number) => {
@@ -145,18 +146,18 @@ export default function GameBoard() {
     //     console.log(`Clicked cell at row ${row}, column ${col}`)
     // }
     // Helper function to place an image piece in a cell
-    const placePiece = (row: number, col: number, imageUrl: string) => {
-        if (typeof window !== 'undefined') { // Ensure this runs on the client side
-            const cellId = `cell-${row}-${col}`
-            const cell = document.getElementById(cellId)
-            if (cell) {
-                cell.style.backgroundImage = `url(${imageUrl})`
-                cell.style.backgroundSize = 'cover'  // Adjust this for image size handling
-                cell.style.backgroundPosition = 'center'
-                cell.style.backgroundRepeat = 'no-repeat'
-            }
-        }
-    }
+    // const placePiece = (row: number, col: number, imageUrl: string) => {
+    //     if (typeof window !== 'undefined') { // Ensure this runs on the client side
+    //         const cellId = `cell-${row}-${col}`
+    //         const cell = document.getElementById(cellId)
+    //         if (cell) {
+    //             cell.style.backgroundImage = `url(${imageUrl})`
+    //             cell.style.backgroundSize = 'cover'  // Adjust this for image size handling
+    //             cell.style.backgroundPosition = 'center'
+    //             cell.style.backgroundRepeat = 'no-repeat'
+    //         }
+    //     }
+    // }
     // // change it once starting building the logic
     // // Initial red Position
     // placePiece(2, 2, '/redDum.png');
@@ -193,7 +194,7 @@ export default function GameBoard() {
                             className={`relative border border-gray-700 w-full h-full ${getCellColorClass(cell.color)}`}
                         >
                             {cell.piece !== 'none' && (
-                                <img
+                                <Image
                                     src={`/${cell.piece}.png`}
                                     alt={cell.piece}
                                     className="absolute w-full h-full object-cover"
