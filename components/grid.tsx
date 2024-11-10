@@ -52,10 +52,10 @@ export default function InteractiveGrid() {
     placePiece(2, 3, '/redDum.png');
     placePiece(3, 3, '/redDum.png');
 
-    placePiece(2, 11, '/greendum.png');
-    placePiece(3, 11, '/greendum.png');
-    placePiece(2, 12, '/greendum.png');
-    placePiece(3, 12, '/greendum.png');
+    placePiece(2, 11, '/greenDum.png');
+    placePiece(3, 11, '/greenDum.png');
+    placePiece(2, 12, '/greenDum.png');
+    placePiece(3, 12, '/greenDum.png');
 
     placePiece(11, 2, 'yellowDum.png');
     placePiece(12, 2, 'yellowDum.png');
