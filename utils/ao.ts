@@ -81,8 +81,6 @@ export async function diceRoll(): Promise<void> {
             process: PROCESS_ID,
         })
 
-        //console.log("Dice Roll: ", resultOutput)
-        //console.log('Result output:', JSON.stringify(resultOutput, null, 2));
 
         if (resultOutput && resultOutput.Messages && resultOutput.Messages.length > 0) {
             const messageData = JSON.parse(resultOutput.Messages[0].Data);
@@ -98,78 +96,46 @@ export async function diceRoll(): Promise<void> {
     }
 }
 
-export async function saveScore(walletAddress: string, score: number): Promise<void> {
+// Function to move the yellow piece
+export async function moveYellowPiece(): Promise<{ row: number, col: number } | void> {
     try {
         const { signer } = await getAOInstance();
 
-        // Send the score-saving message
+        // Send message to AO process to handle the movement of yellow piece
         const messageOutput = await message({
             process: PROCESS_ID,
             signer,
             tags: [
-                { name: 'Action', value: 'SaveScore' },
-                { name: 'Score', value: score.toString() },
-                { name: 'Wallet', value: walletAddress },
-            ],
-            data: score.toString(),
+                { name: 'Action', value: 'MoveYellowPiece' }
+            ]
         });
 
-        console.log('Save score message sent:', messageOutput);
-
-        // Get the result of saving the score
+        // Fetch the result from AO process
         const resultOutput = await result({
             message: messageOutput,
             process: PROCESS_ID,
         });
 
-        console.log('Save score result:', JSON.stringify(resultOutput, null, 2));
-
-        if (!resultOutput) {
-            throw new Error('Failed to save score: ' + JSON.stringify(resultOutput));
-        }
-    } catch (error) {
-        console.error('Error saving score:', error);
-        throw error;
-    }
-}
-
-export async function fetchAllScores(): Promise<{ player: string; score: number; timestamp: number }[]> {
-    try {
-        const { signer } = await getAOInstance();
-
-        // Send a request to fetch all scores
-        const messageOutput = await message({
-            process: PROCESS_ID,
-            signer,
-            tags: [{ name: 'Action', value: 'GetAllScores' }],
-            data: '',
-        });
-
-        console.log('Fetch all scores message sent:', messageOutput);
-
-        // Get the result of fetching scores
-        const resultOutput = await result({
-            message: messageOutput,
-            process: PROCESS_ID,
-        });
-
-        console.log('Fetch scores result:', JSON.stringify(resultOutput, null, 2));
-
+        // Check and parse the result
         if (resultOutput && resultOutput.Messages && resultOutput.Messages.length > 0) {
             const messageData = JSON.parse(resultOutput.Messages[0].Data);
 
-            if (messageData.status === 'success' && Array.isArray(messageData.data)) {
-                return messageData.data.map((item: any) => ({
-                    player: item.wallet || 'Unknown',
-                    score: item.score || 0,
-                    timestamp: Math.floor(item.timestamp / 1000) // Convert to seconds
-                }));
-            }
-        }
+            // Log messageData for debugging
+            console.log('Message Data:', messageData);
 
-        return [];
+
+
+            // Extract new position from the message data
+            const { newPosition } = messageData;
+            const { row, col } = newPosition;
+
+            console.log(`Yellow piece moved to: Row ${row}, Col ${col}`);
+
+            // Return the new position to update the frontend
+            return { row, col };
+        }
     } catch (error) {
-        console.error('Error fetching all scores:', error);
+        console.error('Error moving yellow piece:', error);
         throw error;
     }
 }

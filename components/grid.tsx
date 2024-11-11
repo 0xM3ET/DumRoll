@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card } from "@/components/ui/card"
 
 const GRID_SIZE = 15
@@ -47,25 +47,30 @@ export default function InteractiveGrid() {
 
     // change it once starting building the logic
     // Initial red Position
-    placePiece(2, 2, '/redDum.png');
-    placePiece(3, 2, '/redDum.png');
-    placePiece(2, 3, '/redDum.png');
-    placePiece(3, 3, '/redDum.png');
+    useEffect(() => {
+        const initialSetup = () => {
+            placePiece(2, 2, '/redDum.png');
+            placePiece(3, 2, '/redDum.png');
+            placePiece(2, 3, '/redDum.png');
+            placePiece(3, 3, '/redDum.png');
 
-    placePiece(2, 11, '/greenDum.png');
-    placePiece(3, 11, '/greenDum.png');
-    placePiece(2, 12, '/greenDum.png');
-    placePiece(3, 12, '/greenDum.png');
+            placePiece(2, 11, '/greenDum.png');
+            placePiece(3, 11, '/greenDum.png');
+            placePiece(2, 12, '/greenDum.png');
+            placePiece(3, 12, '/greenDum.png');
 
-    placePiece(11, 2, 'yellowDum.png');
-    placePiece(12, 2, 'yellowDum.png');
-    placePiece(11, 3, 'yellowDum.png');
-    placePiece(12, 3, 'yellowDum.png');
+            placePiece(11, 2, 'yellowDum.png');
+            placePiece(12, 2, 'yellowDum.png');
+            placePiece(11, 3, 'yellowDum.png');
+            placePiece(12, 3, 'yellowDum.png');
 
-    placePiece(11, 11, 'blueDum.png');
-    placePiece(12, 11, 'blueDum.png');
-    placePiece(11, 12, 'blueDum.png');
-    placePiece(12, 12, 'blueDum.png');
+            placePiece(11, 11, 'blueDum.png');
+            placePiece(12, 11, 'blueDum.png');
+            placePiece(11, 12, 'blueDum.png');
+            placePiece(12, 12, 'blueDum.png');
+        };
+        initialSetup()
+    }, [gridState]);
 
     // red box
     for (let i = 0; i < 6; i++) {

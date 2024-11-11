@@ -1,16 +1,15 @@
 "use client";
 import Image from "next/image";
-import { Irish_Grover } from 'next/font/google';
+import { Sour_Gummy } from 'next/font/google';
 import { connectToArConnect, disconnectFromArConnect } from '@/utils/arconnect';
 import { initializeAO, resetAOConnection } from '../utils/ao';
 import { useState } from "react";
 
 
-const irishGrover = Irish_Grover({
+const sourGummy = Sour_Gummy({
     subsets: ['latin'],
     weight: '400', // Irish Grover typically comes in regular weight
 });
-
 export default function Home() {
 
     const [walletAddress, setWalletAddress] = useState<string | null>(null);
@@ -62,8 +61,8 @@ export default function Home() {
         <nav className="flex items-center justify-between px-28 py-2  overflow-hidden">
             <Image src={"/DumRoll.png"} alt={"ludumix_logo"} width={260} height={180} />
 
-            <div className={irishGrover.className}>
-                <h1 className="font-bold text-6xl overflow-hidden">
+            <div className={sourGummy.className}>
+                <h1 className="font-bold text-6xl">
                     Play Ludo On AO!
                 </h1>
             </div>

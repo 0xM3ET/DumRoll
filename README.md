@@ -1,12 +1,14 @@
-Here's a sample README for **DumRoll: Decentralized Ludo on Arweave**, complete with a structure to add images once you have them.
+**DumRoll: Decentralized Ludo on Arweave**
 
 ---
 
 # DumRoll 🕹️
 
+### Disclaimer: Not Completely working , but not Broken. Work In Progress!
+
 **Ludo Chain** is a decentralized, Web3-powered version of the classic Ludo board game. Built on Arweave's permaweb, it offers a secure, permanent, and trustless gaming experience. Featuring real-time multiplayer interactions through **aoConnect** and verifiable dice rolls, this dApp brings traditional board gaming into the blockchain era.
 
-![DumRoll Banner](./public/ludo-banner.png)
+![DumRoll Banner](./public/ludo-banner-1.png)
 
 ## 🚀 Features
 
@@ -107,8 +109,8 @@ If you have any feedback or suggestions, feel free to open an issue or reach out
 
 ### 📧 Contact
 
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
-- **Twitter**: [@yourusername](https://twitter.com/yourusername)
+- **Email**: [0xm3et@gmail.com](mailto:0xm3et@gmail.com)
+- **Twitter**: [@0xM3ET](https://x.com/0xM3ET)
 
 Enjoy the game and dive into decentralized board gaming with **DumRoll**! 🥳
 
