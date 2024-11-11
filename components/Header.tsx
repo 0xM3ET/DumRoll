@@ -68,14 +68,16 @@ export default function Home() {
                 </h1>
             </div>
 
-            <button
-                onClick={handleConnect}
-                className="bg-slate-900 hover:bg-slate-700 rounded-lg text-white px-6 py-3 text-lg font-semibold transition duration-300 ease-in-out flex items-center"
-            > {walletAddress ? `Connected: ${formatAddress(walletAddress)}` : "Connect Wallet"}
-            </button>
-            <button onClick={handleDisconnect}>
-                Disconnect
-            </button>
+            <div className="flex gap-4">
+                <button
+                    onClick={walletAddress ? handleDisconnect : handleConnect}
+                    className={`rounded-lg text-white px-6 py-3 text-lg font-semibold transition duration-300 ease-in-out ${walletAddress ? "bg-red-700 hover:bg-red-500" : "bg-slate-900 hover:bg-slate-700"
+                        }`}
+                >
+                    {walletAddress ? `Disconnect` : "Connect Wallet"}
+                </button>
+            </div>
+
 
         </nav>
     );
