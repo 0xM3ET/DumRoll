@@ -6,7 +6,7 @@
 
 ### Disclaimer: Not Completely working , but not Broken. Work In Progress!
 
-**Ludo Chain** is a decentralized, Web3-powered version of the classic Ludo board game. Built on Arweave's permaweb, it offers a secure, permanent, and trustless gaming experience. Featuring real-time multiplayer interactions through **aoConnect** and verifiable dice rolls, this dApp brings traditional board gaming into the blockchain era.
+**DumRoll** is a decentralized, Web3-powered version of the classic Ludo board game. Built on AO Processes, it offers a secure, and trustless gaming experience. Featuring real-time multiplayer interactions through **aoConnect** and verifiable dice rolls, this dApp brings traditional board gaming into the blockchain era.
 
 ![DumRoll Banner](./public/ludo-banner-1.png)
 
