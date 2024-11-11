@@ -56,7 +56,7 @@ Follow these steps to get the project up and running locally:
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/yourusername/DumRoll.git
-   cd ludo-chain
+   cd DumRoll
    ```
 
 2. **Install Dependencies:**
