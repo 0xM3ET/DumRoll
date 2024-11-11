@@ -1,6 +1,6 @@
 import { createDataItemSigner, connect, result, message } from '@permaweb/aoconnect';
 
-const PROCESS_ID = "h73R8kt9PTIGz0OYimA_oe1b6MONuSor4PKvAXZcNyY"
+const PROCESS_ID = "d0iU8eBM8iF39mRDfjhXVo3anW0i8s3zCzAfAMJhEjs"
 
 let aoInstance: any = null;
 let signer: any = null;
@@ -76,14 +76,24 @@ export async function diceRoll(): Promise<void> {
             ]
         })
 
-        const { Messages } = await result({
+        const resultOutput = await result({
             message: messageOutput,
             process: PROCESS_ID,
         })
 
-        console.log("Dice Roll: ", Messages)
+        //console.log("Dice Roll: ", resultOutput)
+        //console.log('Result output:', JSON.stringify(resultOutput, null, 2));
+
+        if (resultOutput && resultOutput.Messages && resultOutput.Messages.length > 0) {
+            const messageData = JSON.parse(resultOutput.Messages[0].Data);
+            console.log(messageData);
+
+            return (messageData.diceRoll);
+        }
+
+
     } catch (error) {
-        console.error('Error saving score:', error);
+        console.error('Error, Try again', error);
         throw error;
     }
 }

@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Here's a sample README for **DumRoll: Decentralized Ludo on Arweave**, complete with a structure to add images once you have them.
 
-## Getting Started
+---
 
-First, run the development server:
+# DumRoll 🕹️
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Ludo Chain** is a decentralized, Web3-powered version of the classic Ludo board game. Built on Arweave's permaweb, it offers a secure, permanent, and trustless gaming experience. Featuring real-time multiplayer interactions through **aoConnect** and verifiable dice rolls, this dApp brings traditional board gaming into the blockchain era.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![DumRoll Banner](./public/ludo-banner.png)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Secure Player Authentication**: Log in seamlessly using **arweaveWallet** for a secure and decentralized experience.
+- **Real-Time Multiplayer**: Connect with friends and opponents in real time using **aoConnect**.
+- **Verifiable Dice Rolls**: Ensure fair gameplay with Lua-script-powered random dice rolls.
+- **Smart Contract-Based Rules**: Game rules are enforced via **Ao-Process**, ensuring transparent and trustless interactions.
+- **Permanent Game History**: Game states are stored on Arweave's permaweb, enabling permanent storage of moves and outcomes.
 
-## Learn More
+## 🎮 Demo
 
-To learn more about Next.js, take a look at the following resources:
+Check out the live demo [here](https://dum-roll.vercel.app/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![DumRoll Gameplay](./public/GamePlay.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
 
-## Deploy on Vercel
+| Component      | Technology        |
+|----------------|-------------------|
+| **Frontend**   | Next.js, TypeScript|
+| **Blockchain** | Arweave           |
+| **Authentication** | arweaveWallet |
+| **Connection** | aoConnect       |
+| **Smart Contracts** | Ao-Process    |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📸 Screenshots
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 1. Home Screen
+The starting point of the game where users can connect their wallets and join or create a room.
+
+![Home Screen](./public/images/home-screen.png)
+
+### 2. Gameplay Screen
+Experience the classic Ludo game with a decentralized twist.
+
+![Gameplay Screen](./public/GamePlay.png)
+
+### 3. Player Authentication
+Secure login using **arweaveWallet** ensures privacy and control.
+
+![Authentication](./public/auth.png)
+
+## 📦 Installation
+
+Follow these steps to get the project up and running locally:
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/yourusername/DumRoll.git
+   cd ludo-chain
+   ```
+
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the Development Server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in Browser:**
+   Navigate to `http://localhost:3000` to start playing.
+
+## ⚙️ How It Works
+
+1. **Player Authentication**: Users log in using **arweaveWallet**, which securely manages their session.
+2. **Room Creation and Joining**: Players can create a new game room or join an existing one in real time using **aoConnect**.
+3. **Smart Contract Logic**: Game rules and mechanics are handled through smart contracts on Ao-Process, ensuring a fair experience.
+4. **Random Dice Rolls**: Lua scripts are used to generate verifiable, random dice rolls, adding a layer of trust to the gameplay.
+
+## 🌐 Roadmap
+
+- **Expand Dice Roll Verification**: Utilize Arweave's data transactions to store and verify dice rolls permanently.
+- **Mobile Version**: Improve mobile compatibility for seamless gameplay on all devices.
+- **Enhanced Analytics**: Track game statistics and player performance using a decentralized analytics solution.
+
+## 🤝 Contributing
+
+We welcome contributions from the community! To get started:
+
+1. Fork the repository.
+2. Create a new branch (`feature/your-feature`).
+3. Commit your changes (`git commit -m 'Add a new feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a pull request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## 💬 Feedback
+
+If you have any feedback or suggestions, feel free to open an issue or reach out to us directly.
+
+---
+
+### 📧 Contact
+
+- **Email**: [your-email@example.com](mailto:your-email@example.com)
+- **Twitter**: [@yourusername](https://twitter.com/yourusername)
+
+Enjoy the game and dive into decentralized board gaming with **DumRoll**! 🥳
+
+---
