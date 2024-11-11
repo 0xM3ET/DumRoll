@@ -20,10 +20,10 @@ export default function Home() {
     //const [showInstructions, setShowInstructions] = useState<boolean>(false);
     console.log(loading, error);
     // Format wallet address for display
-    const formatAddress = (addr: string) => {
-        if (!addr) return '';
-        return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
-    };
+    // const formatAddress = (addr: string) => {
+    //     if (!addr) return '';
+    //     return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
+    // };
 
     async function handleConnect() {
         try {
@@ -67,7 +67,7 @@ export default function Home() {
                     Play Ludo On AO!
                 </h1>
             </div>
-
+            {/*Connect Disconnect button */}
             <div className="flex gap-4">
                 <button
                     onClick={walletAddress ? handleDisconnect : handleConnect}
